@@ -4,17 +4,31 @@ import uuid
 class PlayerView:
     """Les joueurs entrent leur données"""
 
-    def ask_player_identity(self, name: str, surname: str, birthday: str, identifier: str):
+    @staticmethod
+    def get_player_data():
+        name = PlayerView.get_player_name()
+        surname = PlayerView.get_player_surname()
+        birthday = PlayerView.get_player_birthday()
+        identifier = PlayerView.get_player_identifier()
+        player_test = {name, surname, birthday, identifier}
+        return player_test
 
-        PlayerView.ask_player_identity(self, name=name, surname=surname, birthday=birthday, identifier=identifier)
-        name = input("Entrez votre nom : ")
-        surname = input("Entrez votre prénoms : ")
-        birthday = input("Entrez votre date d'anniversaire sous la forme jj/mm/aaaa : ")
-        identifier = uuid.uuid1().__str__()
-        if not name or surname or birthday or identifier:
-            return
-        return name, surname, birthday, identifier
+    @staticmethod
+    def get_player_name():
+        return input("Entrez votre nom : ")
+
+    @staticmethod
+    def get_player_surname():
+        return input("Entrez votre prénom : ")  # Faire du récursif pur la validation de champ
+
+    @staticmethod
+    def get_player_birthday():
+        return input("Entrez votre date de naissance (sous la forme jj/mm/aaa) : ")
+
+    @staticmethod
+    def get_player_identifier():
+        return uuid.uuid1()
 
 
 player = PlayerView()
-player.ask_player_identity(name=)  # --> PK forcément name= ???
+print(player.get_player_data())

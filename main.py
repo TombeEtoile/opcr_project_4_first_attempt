@@ -6,11 +6,5 @@ from view.base import PassivView
 
 
 def main():
-    p_model = PlayerModel(p_name, p_surname, p_birthday, p_identifier)
-    p_view = PlayerView()
-    passiv_view = PassivView(player_view, view)
-    p_controller = PlayerController(p_view)
-    p_controller.run()
-
 
 main()

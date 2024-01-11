@@ -1,6 +1,7 @@
 from typing import List
 
 from model.player_model import PlayerModel
+from view.player_view import PlayerView
 
 
 class PlayerController:
@@ -13,19 +14,11 @@ class PlayerController:
         # view
         self.view = view
 
-    def get_players(self, p_name, p_surname, p_birthday, p_identifier):
+    @staticmethod
+    def check_players():
         """Check player view with player model"""
 
-        while len(self.players) < 9:
-            p_name = self.view.PlayerView.ask_player_identity(name=p_name)
-            p_surname = self.view.PlayerView.ask_player_identity(surname=p_surname)
-            p_birthday = self.view.PlayerView.ask_player_identity(birthday=p_birthday)
-            p_identifier = self.view.PlayerView.ask_player_identity(identifier=p_identifier)
-            if not p_name or p_surname or p_birthday or p_identifier:
-                return
-            return p_name, p_surname, p_birthday, p_identifier
+        player = PlayerView.get_player_data()
 
-        player = PlayerModel(p_name, p_surname, p_birthday, p_identifier)
-        self.players.append(player)
 
         # A FAIRE --> model.player_repository.save(player) --> data.json
