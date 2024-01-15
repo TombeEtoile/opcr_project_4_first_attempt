@@ -15,10 +15,19 @@ class PlayerController:
         self.view = view
 
     @staticmethod
-    def check_players():
+    def check_player():
         """Check player view with player model"""
 
-        player = PlayerView.get_player_data()
+        for p in range(9):
+            player = PlayerView.get_player_data()
+            return player
 
+
+    @staticmethod
+    def run():
+
+        run_game = PlayerView.get_player_data()
+        return run_game
 
         # A FAIRE --> model.player_repository.save(player) --> data.json
+

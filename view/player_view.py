@@ -1,4 +1,5 @@
-import uuid
+import random
+import string
 
 
 class PlayerView:
@@ -10,7 +11,7 @@ class PlayerView:
         surname = PlayerView.get_player_surname()
         birthday = PlayerView.get_player_birthday()
         identifier = PlayerView.get_player_identifier()
-        player_test = {name, surname, birthday, identifier}
+        player_test = {"Nom": name, "Prénom": surname, "Date de naissance": birthday, "ID": identifier}
         return player_test
 
     @staticmethod
@@ -27,8 +28,12 @@ class PlayerView:
 
     @staticmethod
     def get_player_identifier():
-        return uuid.uuid1()
+        return (f"{random.randint(1000, 9999)}"
+                f"{random.choice(string.ascii_letters)}"
+                f"{random.choice(string.ascii_letters)}"
+                f"{random.choice(string.ascii_letters)}"
+                f"{random.randint(1000, 9999)}")
 
 
-player = PlayerView()
-print(player.get_player_data())
+# player = PlayerView()
+# print(player.get_player_data())

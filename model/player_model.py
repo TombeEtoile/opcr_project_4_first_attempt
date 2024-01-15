@@ -1,6 +1,3 @@
-from controller import player_controller
-
-
 class PlayerModel:
 
     def __init__(self, p_name, p_surname, p_birthday, p_identifier):
