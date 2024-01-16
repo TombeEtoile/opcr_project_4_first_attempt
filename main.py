@@ -5,6 +5,11 @@ from view.player_view import PlayerView
 
 def main():
 
-    player_view = PlayerView
-    player_model = PlayerModel
+    # player_view = PlayerView
+    # player_model = PlayerModel
     player_controller = PlayerController
+    player_controller.run_and_save()
+    # player_controller.save_to_json()
+
+
+print(main())

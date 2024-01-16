@@ -1,4 +1,5 @@
 from typing import List
+import json
 
 from model.player_model import PlayerModel
 from view.player_view import PlayerView
@@ -15,19 +16,14 @@ class PlayerController:
         self.view = view
 
     @staticmethod
-    def check_player():
-        """Check player view with player model"""
-
-        for p in range(9):
-            player = PlayerView.get_player_data()
-            return player
-
-
-    @staticmethod
-    def run():
+    def run_and_save():
+        """call the view and save the player info into json file"""
 
         run_game = PlayerView.get_player_data()
+
+        with open("data/player_data.json", "w") as f:
+            json.dump(run_game, f)
+
         return run_game
 
-        # A FAIRE --> model.player_repository.save(player) --> data.json
-
+# A FAIRE --> model.player_repository.save(player) --> data.json
