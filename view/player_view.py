@@ -1,8 +1,7 @@
 import random
 import string
-from controller import player_controller
 
-# from controller.player_controller import PlayerController
+from controller import player_controller
 
 
 class PlayerView:
@@ -64,29 +63,9 @@ class PlayerView:
         surname = PlayerView.get_player_surname()
         birthday = PlayerView.get_player_birthday()
         identifier = PlayerView.get_player_identifier()
-        player_test = {"Nom": name, "Prenom": surname, "Date de naissance": birthday, "ID": identifier}
-        AddAnotherPlayer.asking_to_add_player()
-        return player_test
-
-
-class AddAnotherPlayer:
-    """Ask if the programme should add another player"""
-
-    @staticmethod
-    def asking_to_add_player():
-
-        asking = int(input(f"1 - pour ajouter un nouveau joueur \n"
-                           f"2 - pour cloturer l'inscription de nouveau joueur \n"
-                           f"Taper 1 ou 2 - "))
-        if asking == 1:
-            print(player_controller.PlayerController.run_save_and_add())
-        elif asking == 2:
-            print("Les joueurs ont bien été enregistrés")
-        else:
-            while asking != 1 or 2 or asking == ValueError:
-                print("Vous devez écrire 1 ou 2")
-                print(AddAnotherPlayer.asking_to_add_player())
-                break
+        player_profil = {"Nom": name, "Prenom": surname, "Date de naissance": birthday, "ID": identifier}
+        player_controller.PlayerController.asking_for_new_player()
+        return player_profil
 
 
 # save = PlayerView

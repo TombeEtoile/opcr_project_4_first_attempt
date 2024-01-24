@@ -14,16 +14,8 @@ def test():
 
 def main():
 
-    # player_view = PlayerView
-    # player_model = PlayerModel
-    # player_controller = PlayerController.run_and_save_and_add()
     player_controller = PlayerController
-    player_controller.run_save_and_add()
-
-    # with open("data/player_data.json", "w") as f:
-        # json.dump(player_controller, f, indent=2)
+    player_controller.asking_for_new_player()
 
 
 print(main())
-
-

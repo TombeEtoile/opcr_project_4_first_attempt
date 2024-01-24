@@ -1,12 +1,12 @@
+
+"""
 import random
 import string
+
 from controller import player_controller
 
 
-# from controller.player_controller import PlayerController
-
-
-class PlayerViewTest:
+class PlayerView:
     """Les joueurs entrent leur données"""
 
     @staticmethod
@@ -16,7 +16,7 @@ class PlayerViewTest:
         try:
             user_input = int(user_input)
             print("ERREUR - Vous devez écrire uniquement des lettres.")
-            return PlayerViewTest.get_player_name()
+            return PlayerView.get_player_name()
         except ValueError:
             return user_input
 
@@ -27,20 +27,17 @@ class PlayerViewTest:
         try:
             user_input = int(user_input)
             print("ERREUR - Vous devez écrire uniquement des lettres.")
-            return PlayerViewTest.get_player_name()
+            return PlayerView.get_player_name()
         except ValueError:
             return user_input
 
     @staticmethod
-    def test():
-        x = input("lsdjs : ")
-        if x != str(1):
-            return test()
-        return x
-
-
-       while True:
+    def get_player_birthday():
+        while True:
             print("Entrez votre date de naissance sous la forme jj/mm/aaaa :")
+            user_input_day = input("jj : ")
+            user_input_month = input("mm : ")
+            user_input_year = input("aaaa : ")
             try:
                 user_input_day = int(user_input_day)
                 user_input_month = int(user_input_month)
@@ -51,27 +48,6 @@ class PlayerViewTest:
 
         print(f"Votre date de naissance est - {user_input_day}/{user_input_month}/{user_input_year}")
         return f"{str(user_input_day)}/{str(user_input_month)}/{str(user_input_year)}"
-
-    def get_player_day():
-        user_input_day = input("jj : ")
-        return user_input_day
-
-    def get_player_month():
-        user_input_month = input("mm : ")
-        return user_input_month
-
-    def get_player_year():
-
-        user_input_year = input("aaaa : ")
-        return user_input_year
-
-    def get_player_birthday(day, month, year):
-
-        p_day = PlayerViewTest.get_player_name()
-        p_day = day
-        get_player_month() = month
-        get_player_year() = year
-
 
     @staticmethod
     def get_player_identifier():
@@ -85,13 +61,13 @@ class PlayerViewTest:
 
     @staticmethod
     def get_player_data():
-        name = PlayerViewTest.get_player_name()
-        surname = PlayerViewTest.get_player_surname()
-        birthday = PlayerViewTest.get_player_birthday()
-        identifier = PlayerViewTest.get_player_identifier()
-        player_test = {"Nom": name, "Prenom": surname, "Date de naissance": birthday, "ID": identifier}
+        name = PlayerView.get_player_name()
+        surname = PlayerView.get_player_surname()
+        birthday = PlayerView.get_player_birthday()
+        identifier = PlayerView.get_player_identifier()
+        player_profil = {"Nom": name, "Prenom": surname, "Date de naissance": birthday, "ID": identifier}
         AddAnotherPlayer.asking_to_add_player()
-        return player_test
+        return player_profil
 
 
 class AddAnotherPlayer:
@@ -103,21 +79,21 @@ class AddAnotherPlayer:
         asking = int(input(f"1 - pour ajouter un nouveau joueur \n"
                            f"2 - pour cloturer l'inscription de nouveau joueur \n"
                            f"Taper 1 ou 2 - "))
-        # while asking == ValueError:
-        # print("Vous devez écrire 1 ou 2")
-        # break
         if asking == 1:
-            # print(PlayerView.get_player_data())
             print(player_controller.PlayerController.run_save_and_add())
+            # player_controller.PlayerController.run_save_and_add()
+            # PlayerView.get_player_data()
         elif asking == 2:
             print("Les joueurs ont bien été enregistrés")
         else:
             while asking != 1 or 2 or asking == ValueError:
                 print("Vous devez écrire 1 ou 2")
-                print(AddAnotherPlayer.asking_to_add_player())
+                AddAnotherPlayer.asking_to_add_player()
                 break
 
-save = PlayerViewTest
-print(save.get_player_data())
+
+# save = PlayerView
+# print(save.get_player_data())
 # add = AddAnotherPlayer
 # print(add.asking_to_add_player())
+"""

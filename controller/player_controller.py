@@ -2,7 +2,7 @@ from typing import List
 import json
 
 from model.player_model import PlayerModel
-from view.player_view import PlayerView, AddAnotherPlayer
+from view import player_view
 
 
 class PlayerController:
@@ -16,19 +16,24 @@ class PlayerController:
         self.view = view
 
     @staticmethod
-    def run_save_and_add():
-        """call the view and save the player info into json file"""
+    def asking_for_new_player():
+        """Ask for adding a player"""
 
-        all_players = []
-        # user_input = PlayerView.get_player_data()
-        user_input = AddAnotherPlayer.asking_to_add_player()
-        all_players.append(user_input)
+        user_input = int(input(f"1 - pour ajouter un nouveau joueur \n2 - pour cloturer l'inscription de nouveau joueur \nTaper 1 ou 2 - "))
+        if user_input == 1:
+            player_view.PlayerView.get_player_data()
+        if user_input == 2:
+            print("Les joueurs ont bien été enregistrés")
+            PlayerController.run_save_and_add()
 
-        with open("data/player_data.json", "w") as f:
-            json.dump(all_players, f, indent=2)
-            # json.dump(user_input, f, indent=2)
-
+    @staticmethod
+    def add_player():
+        all_players = [player_view.PlayerView.get_player_data()]
         return all_players
 
+    @staticmethod
+    def run_save_and_add():
+        """add player in Json"""
 
-# A FAIRE --> model.player_repository.save(player) --> data.json
+        with open("data/player_data.json", "w") as f:
+            json.dump(PlayerController.add_player(), f, indent=2)
