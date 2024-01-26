@@ -2,7 +2,7 @@ from typing import List
 import json
 
 from model.player_model import PlayerModel
-from view import player_view
+from view.player_view import PlayerView, AskingPlayer
 
 
 class PlayerController:
@@ -15,25 +15,33 @@ class PlayerController:
         # view
         self.view = view
 
-    @staticmethod
-    def asking_for_new_player():
-        """Ask for adding a player"""
+    def add_new_player(self):
 
-        user_input = int(input(f"1 - pour ajouter un nouveau joueur \n2 - pour cloturer l'inscription de nouveau joueur \nTaper 1 ou 2 - "))
-        if user_input == 1:
-            player_view.PlayerView.get_player_data()
-        if user_input == 2:
-            print("Les joueurs ont bien été enregistrés")
-            PlayerController.run_save_and_add()
+        response = AskingPlayer.asking_for_new_player()
+        if response == 1:
+            self.players.append(PlayerView.get_player_data())
+            print(self.players)
+            return self.players
+        elif response == 2:
+            print("Vous n'avez rentré aucun joueur")
 
-    @staticmethod
-    def add_player():
-        all_players = [player_view.PlayerView.get_player_data()]
-        return all_players
+    def call_for_asking_new_player(self):
 
-    @staticmethod
-    def run_save_and_add():
+        x = 1
+
+        if len(self.add_new_player()) == x:
+            AskingPlayer.asking_for_new_player()
+            x += 1
+
+        if len(self.add_new_player()) == x - 1:
+            self.run_save_and_add()
+
+    def run_save_and_add(self):
         """add player in Json"""
 
         with open("data/player_data.json", "w") as f:
-            json.dump(PlayerController.add_player(), f, indent=2)
+            json.dump(self.players, f, indent=2)
+
+
+# test = PlayerController(view=2)
+# test.add_new_player()

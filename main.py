@@ -2,7 +2,7 @@ import json
 
 from model.player_model import PlayerModel
 from controller.player_controller import PlayerController
-from view.player_view import PlayerView
+from view.player_view import PlayerView, AskingPlayer
 
 
 def test():
@@ -14,8 +14,10 @@ def test():
 
 def main():
 
-    player_controller = PlayerController
-    player_controller.asking_for_new_player()
+    player_controller = PlayerController(view=True)
+    player_controller.add_new_player()
+    player_controller.call_for_asking_new_player()
+    player_controller.run_save_and_add()
 
 
 print(main())
