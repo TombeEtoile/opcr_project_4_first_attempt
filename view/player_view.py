@@ -27,7 +27,7 @@ class PlayerView:
         try:
             user_input = int(user_input)
             print("ERREUR - Vous devez écrire uniquement des lettres.")
-            return PlayerView.get_player_name()
+            return PlayerView.get_player_surname()
         except ValueError:
             return user_input
 
