@@ -1,22 +1,40 @@
 import json
+from typing import List
 
 import view
 import model
-import data
-
-from typing import List
+from data import all_data
 
 
 class TournamentController:
 
-    def __init__(self, tournament, view):
+    def __init__(self):
+        pass
 
-        # model
-        self.model = tournament
+    @staticmethod
+    def player_list():
 
-        # view
-        self.view = view
+        player_data = all_data.AllData.player_data()
+        return player_data
 
-    def set_tournament(self):
+    @staticmethod
+    def tournament_list():
+
+        tournament_data = all_data.AllData.tournament_data()
+        for row in tournament_data:
+            print(row["Nom"])
+
+        return tournament_data
+
+    @staticmethod
+    def show_player_name(self):
+
+        players = TournamentController.player_list()
+        for row in players:
+            print(row["Nom"])
+
+        return players
 
 
+controller = TournamentController()
+print(controller.player_list())
