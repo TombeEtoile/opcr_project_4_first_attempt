@@ -1,0 +1,29 @@
+[
+  {
+    "Nom": "Open de Noël de Zurich",
+    "Lieu": "Zurich",
+    "Début": "26/12/2024",
+    "Fin": "29/12/2024",
+    "Nombre de rounds": 4,
+    "Nombre de joueurs": 8,
+    "Commentaire du jury": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "Nom": "Tournoi de Wijk aan Zee",
+    "Lieu": "Wijk aan Zee",
+    "Début": "12/01/2024",
+    "Fin": "28/01/2024",
+    "Nombre de rounds": 4,
+    "Nombre de joueurs": 8,
+    "Commentaire du jury": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "Nom": "Championnat du monde d’échecs",
+    "Lieu": "Toronto",
+    "Début": "10/09/2024",
+    "Fin": "23/09/2024",
+    "Nombre de rounds": 4,
+    "Nombre de joueurs": 8,
+    "Commentaire du jury": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+]
