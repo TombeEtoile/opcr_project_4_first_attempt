@@ -1,52 +1,32 @@
 import view
 from controller import player_controller
 from model import player_model
+import data
 
 
 class TournamentView:
 
     @staticmethod
-    def tournament_general_info():
+    def get_tournament_info():
 
-        print("Entrez les informations du tournois")
-
-    @staticmethod
-    def tournament_name():
-
-        user_input = input("Nom du tournoi :")
+        user_input = input("1 - voir tous les matchs de tous les tournois"
+                           "2 - voir les résultats d'un joueur"
+                           "3 - voir les résultats d'un tournoi"
+                           "Tapez 1, 2 ou 3 : ")
         return user_input
 
     @staticmethod
-    def tournament_place():
-        user_input = input("Emplacement du tournoi :")
+    def get_player_performance():
+
+        user_input = input(f"Quel joueur voulez-vous voir ? ")
         return user_input
 
     @staticmethod
-    def tournament_start():
-        user_input = input("Date du début du tournoi :")
+    def get_tournament_list():
+
+        user_input = input("Quel tournoi voulez-vous voir ? ")
         return user_input
-
-    @staticmethod
-    def tournament_end():
-        user_input = input("Date dde fin du tournoi :")
-        return user_input
-
-    @staticmethod
-    def tournament_round_number():
-        user_input = input("Nombre de tour du tournoi :")
-        return user_input
-
-    @staticmethod
-    def tournament_rond_list():
-        pass
-
-    @staticmethod
-    def tournament_player_list():
-        pass
-
-    @staticmethod
-    def tournament_jury_remark():
-        pass
 
 
 test_view = TournamentView
+test_view.get_player_performance()

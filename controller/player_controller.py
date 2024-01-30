@@ -9,6 +9,7 @@ class PlayerController:
     """Récupère les informations données par les joueurs et les vérifies avec le player model"""
 
     def __init__(self, view):
+
         # models
         self.players: List[PlayerModel] = []
 
