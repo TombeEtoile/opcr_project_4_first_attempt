@@ -25,5 +25,6 @@ class AllData:
             return player_data
 
 
-# all_data = AllData
+all_data = AllData
 # print(all_data.player_data())
+# print(all_data.tournament_data())
