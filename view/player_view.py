@@ -8,6 +8,11 @@ class PlayerView:
     """Les joueurs entrent leur données"""
 
     @staticmethod
+    def get_player_number():
+
+        player_number = 1
+
+    @staticmethod
     def get_player_name():
         """Player name"""
 

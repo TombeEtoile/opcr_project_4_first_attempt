@@ -44,5 +44,9 @@ class PlayerController:
     def run_save_and_add(self):
         """add player in Json"""
 
-        with open("data/player_data.json", "w") as f:
+        with open("controller/data/player_data.json", "w") as f:
             json.dump(self.players, f, indent=2)
+
+
+        # {cle: valeur for cle, valeur in zip(list_books_name, get_books_from_all_categories(url_all_pages))}
+        # resultat attendu = {1: {joueur_1}, 2: {joueur_2}, 3: {joueur_3}, 4: {joueur_4}}
