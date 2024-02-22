@@ -10,24 +10,6 @@ def test():
     return x
 
 
-def test2():
-    """
-    all_list = []
-    list_test = [1, 2, 3, 4, 5, 6, 7, 8]
-    list_min = 0
-    list_max = len(list_test) - 1
-    possible_pairs = int(len(list_test) / 2)
-    # print((list_test[list_min], list_test[list_max]))
-
-    for x in range(possible_pairs):
-        all_list.append((list_test[list_min], list_test[list_max]))
-        possible_pairs -= 1
-        list_min += 1
-        list_max -= 1
-    return all_list
-    """
-
-
 def main():
 
     player_controller = PlayerController(view=True)

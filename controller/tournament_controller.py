@@ -9,26 +9,26 @@ class TournamentController:
         pass
 
     @staticmethod
-    def get_player_info():
+    def find_player_card():
 
-        all_player = TournamentView.player_data()
+        players = TournamentView.player_data()
         user_input = TournamentView.get_player_info(view)
-        # d = all_player[0:len(all_player)]
-        max_size = len(all_player)
 
-        for min_size in range(max_size):
-            test_3 = all_player[min_size]
-            min_size += 1
+        for player in players:
+            if user_input in player.values():
+                return print(f"Voici la fiche du joueur {user_input} - {player}")
+        return print("Ce joueur n'est pas dans notre liste")
 
-        print(f"test_3 = {test_3}")
+    @staticmethod
+    def find_tournament_card():
 
-        for k, val in test_3.items():
-            if user_input == val:
-                user_player = {k: val}
-                return user_player
-            return "Ce joueur n'existe pas"
+        tournament = TournamentView.tournament_data()
+        user_input = TournamentView.get_tournament_info(view)
 
-        # print(all_player.index("AA"))
+        for player in tournament:
+            if user_input in player.values():
+                return print(f"Voici la fiche du tournoi {user_input} - {player}")
+        return print("Ce trounoi n'est pas dans notre liste")
 
     @staticmethod
     def creating_pairs():
@@ -49,6 +49,7 @@ class TournamentController:
 
 view = TournamentView()
 controller = TournamentController()
-print(controller.get_player_info())
+print(controller.find_player_card())
+print(controller.find_tournament_card())
 # print(controller.creating_pairs())
 # print(controller.show_player_name())
