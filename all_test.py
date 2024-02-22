@@ -40,3 +40,62 @@ player = PlayerSetUp()
 player.player_identity()
 player.player_birthday()
 player.player_id()
+
+
+"""        view = TournamentView()
+        all_player = TournamentView.player_data()
+        user_input = TournamentView.get_player_info(view)
+
+        for dicti in all_player:
+            for cle, valeur in dicti.items():
+                print(cle, valeur(user_input))
+
+
+        # for dict in all_player:
+            # for val in dict.values():
+                # print(val)"""
+
+"""        for dicti in all_player:
+            print(dicti)
+            print(all_player)
+            """
+
+"""        all_player = TournamentView.player_data()
+        user_input = TournamentView.get_player_info(view)
+        for d in all_player:
+            test = d
+            print(test)
+            for k, val in alld.items():
+                if user_input == val:
+                    return k
+            return "Ce joueur n'existe pas"
+            """
+
+"""        for min_size in range(max_size):
+            print(all_player[min_size])
+            min_size += 1
+            return
+
+        for k, val in all_player.items():
+            if user_input == val:
+                return k
+            return "Ce joueur n'existe pas"
+            """
+
+"""
+        all_player = TournamentView.player_data()
+        user_input = TournamentView.get_player_info(view)
+        max_size = len(all_player)
+
+        for min_size in range(max_size):
+            test_3 = all_player[min_size]
+            print(f"test_3 = {test_3}")
+            min_size += 1
+
+        for k, val in test_3.items():
+            if user_input == val:
+                return k
+        return "Ce joueur n'existe pas"
+
+        # print(all_player.index("AA"))
+        """

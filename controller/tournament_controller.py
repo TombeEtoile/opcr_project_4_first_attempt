@@ -1,5 +1,7 @@
 import json
 
+from view.tournament_view import TournamentView
+
 
 class TournamentController:
 
@@ -7,57 +9,32 @@ class TournamentController:
         pass
 
     @staticmethod
-    def player_data():
+    def get_player_info():
 
-        with open("../player_data.json", "r") as f:
-            player_dict = f.read()
-            player_data = json.loads(player_dict)
+        all_player = TournamentView.player_data()
+        user_input = TournamentView.get_player_info(view)
+        # d = all_player[0:len(all_player)]
+        max_size = len(all_player)
 
-            return player_data
+        for min_size in range(max_size):
+            test_3 = all_player[min_size]
+            min_size += 1
 
-    def show_player_name(self):
+        print(f"test_3 = {test_3}")
 
-        all_players_name = []
+        for k, val in test_3.items():
+            if user_input == val:
+                user_player = {k: val}
+                return user_player
+            return "Ce joueur n'existe pas"
 
-        players = self.player_data()
-        for row in players:
-            player_name = row["Nom"]
-            all_players_name.append(player_name)
-
-        return all_players_name
-
-    def get_player_info(self):
-
-        # user_input = tournament_view.TournamentView.get_player_info()
-        # for val in self.tournament_data()
-        print(type(self.player_data()))
-
-        # return tournament_view.TournamentView.get_player_info(["Nom"] == user_input)
+        # print(all_player.index("AA"))
 
     @staticmethod
-    def tournament_data():
-
-        with open("../tournament_data.json", "r") as f:
-            tournament_dict = f.read()
-            tournament_data = json.loads(tournament_dict)
-
-            return tournament_data
-
-    def show_tournament_name(self):
-
-        all_tournament_name = []
-
-        tournaments = self.tournament_data()
-        for row in tournaments:
-            tournament_name = row["Nom"]
-            all_tournament_name.append(tournament_name)
-
-        return all_tournament_name
-
-    def creating_pairs(self):
+    def creating_pairs():
 
         pairs = []
-        player_list = self.player_data()
+        player_list = TournamentView.player_data()
         player_list_min = 0
         player_list_max = len(player_list) - 1
         possible_pairs = int(len(player_list) / 2)
@@ -70,7 +47,8 @@ class TournamentController:
         return pairs
 
 
+view = TournamentView()
 controller = TournamentController()
-# print(controller.player_data())
+print(controller.get_player_info())
 # print(controller.creating_pairs())
 # print(controller.show_player_name())
