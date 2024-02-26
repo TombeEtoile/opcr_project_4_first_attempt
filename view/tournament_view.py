@@ -8,7 +8,7 @@ class TournamentView:
 
         print("1 - voir les pairs de joueurs, "
               "2 - voir la fiche d'un joueur, "
-              "3 - voir la fiche d'un tournoi.")
+              "3 - voir la fiche d'un tournoi, ")
         user_input = input("Tapez 1, 2 ou 3 : ")
         return user_input
 
@@ -70,6 +70,7 @@ class TournamentView:
 
 
 test_view = TournamentView()
+# test_view.get_general_tournament_info()
 # print(test_view.player_data())
 # print(test_view.tournament_data())
 # test_view.get_player_info()

@@ -7,7 +7,7 @@ from view.player_view import PlayerView, AddAnotherPlayer
 
 
 class PlayerController:
-    """Récupère les informations données par les joueurs et les vérifies avec le player model"""
+    # Récupère les informations données par les joueurs et les vérifies avec le player model
 
     def __init__(self, view):
         # models
@@ -18,7 +18,8 @@ class PlayerController:
 
     @staticmethod
     def run_save_and_add():
-        """call the view and save the player info into json file"""
+
+        # call the view and save the player info into json file
 
         all_players = []
         # user_input = PlayerView.get_player_data()

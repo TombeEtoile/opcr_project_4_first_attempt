@@ -1,6 +1,5 @@
 from controller.player_controller import PlayerController
-# from controller.tournament_controller import TournamentController
-from controller import data
+from controller.tournament_controller import TournamentController, TournamentView
 
 
 def test():
@@ -12,8 +11,12 @@ def test():
 
 def main():
 
-    player_controller = PlayerController(view=True)
-    player_controller.add_new_player()
+    # player_controller = PlayerController(view=True)
+    # player_controller.add_new_player()
+
+    tournament_controller = TournamentController()
+    tournament_controller.response_general_information()
+
     # Ne pas lancer avant tous les test, tous les joueurs sont déjà instanciés
 
     # tournament_controller = TournamentController()
@@ -21,5 +24,3 @@ def main():
 
 
 print(main())
-
-

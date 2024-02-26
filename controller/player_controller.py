@@ -3,6 +3,7 @@ import json
 
 from model.player_model import PlayerModel
 from view.player_view import PlayerView, AskingPlayer
+# from tournament_controller import TournamentController
 
 
 class PlayerController:
@@ -32,6 +33,7 @@ class PlayerController:
                 """Si 2 ==> enregistre les joueurs"""
                 print("Les joueurs ont été enregistrés")
                 self.run_save_and_add()
+                # TournamentController.response_general_information(self=TournamentController)
 
         except ValueError:
             print("Veuillez écrire 1 ou 2")
@@ -46,6 +48,3 @@ class PlayerController:
 
         with open("controller/data/player_data.json", "w") as f:
             json.dump(self.players, f, indent=2)
-
-
-        # resultat attendu = {1: {joueur_1}, 2: {joueur_2}, 3: {joueur_3}, 4: {joueur_4}}
