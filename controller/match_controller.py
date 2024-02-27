@@ -44,6 +44,13 @@ class MatchController:
 
         return sorted(data, key=lambda x: x['age'])
 
+    def point_distribution(self):
+        """Distribution des point en fonction du résultat"""
+
+        victoire = 1
+        defaite = 0
+        egalite = 0.5
+
     def creat_pair(self):
         """Paire par point elo"""
         pass

@@ -1,6 +1,6 @@
 class PlayerModel:
 
-    def __init__(self, p_name, p_surname, p_birthday, p_identifier, p_elo):
+    def __init__(self, p_name, p_surname, p_birthday, p_identifier, p_elo, p_point):
         """define a player with a name, surname, birthday and id"""
 
         self.name = p_name
@@ -8,3 +8,4 @@ class PlayerModel:
         self.birthday = p_birthday
         self.identifier = p_identifier
         self.elo = p_elo
+        self.point = p_point

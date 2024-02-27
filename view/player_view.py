@@ -52,22 +52,27 @@ class PlayerView:
         return f"{str(user_input_day)}/{str(user_input_month)}/{str(user_input_year)}"
 
     @staticmethod
-    def get_player_identifier():
-        """player ID"""
-
-        player_id = (f"{random.randint(1000, 9999)}"
-                   f"{random.choice(string.ascii_letters)}"
-                   f"{random.choice(string.ascii_letters)}"
-                   f"{random.choice(string.ascii_letters)}"
-                   f"{random.randint(1000, 9999)}")
-        print("Voici votre ID : ", player_id)
-        return player_id
-
-    @staticmethod
     def get_player_elo():
         """player elo"""
         player_elo = random.randint(1800, 2200)
         return player_elo
+
+    @staticmethod
+    def get_player_identifier():
+        """player ID"""
+
+        player_id = (f"{random.randint(1000, 9999)}"
+                     f"{random.choice(string.ascii_letters)}"
+                     f"{random.choice(string.ascii_letters)}"
+                     f"{random.choice(string.ascii_letters)}"
+                     f"{random.randint(1000, 9999)}")
+        print("Voici votre ID : ", player_id)
+        return player_id
+
+    @staticmethod
+    def get_player_point():
+
+        return True
 
     @staticmethod
     def get_player_data():
@@ -78,8 +83,14 @@ class PlayerView:
         birthday = PlayerView.get_player_birthday()
         elo = PlayerView.get_player_elo()
         identifier = PlayerView.get_player_identifier()
+        point = PlayerView.get_player_point()
 
-        player_profil = {"Nom": name, "Prenom": surname, "Date de naissance": birthday,"Elo": elo, "ID": identifier}
+        player_profil = {"Nom": name,
+                         "Prenom": surname,
+                         "Date de naissance": birthday,
+                         "Elo": elo,
+                         "ID": identifier,
+                         "Point": point}
         return player_profil
 
 
