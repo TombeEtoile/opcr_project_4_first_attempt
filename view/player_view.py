@@ -55,13 +55,19 @@ class PlayerView:
     def get_player_identifier():
         """player ID"""
 
-        user_id = (f"{random.randint(1000, 9999)}"
+        player_id = (f"{random.randint(1000, 9999)}"
                    f"{random.choice(string.ascii_letters)}"
                    f"{random.choice(string.ascii_letters)}"
                    f"{random.choice(string.ascii_letters)}"
                    f"{random.randint(1000, 9999)}")
-        print("Voici votre ID : ", user_id)
-        return user_id
+        print("Voici votre ID : ", player_id)
+        return player_id
+
+    @staticmethod
+    def get_player_elo():
+        """player elo"""
+        player_elo = random.randint(1800, 2200)
+        return player_elo
 
     @staticmethod
     def get_player_data():
@@ -70,8 +76,10 @@ class PlayerView:
         name = PlayerView.get_player_name()
         surname = PlayerView.get_player_surname()
         birthday = PlayerView.get_player_birthday()
+        elo = PlayerView.get_player_elo()
         identifier = PlayerView.get_player_identifier()
-        player_profil = {"Nom": name, "Prenom": surname, "Date de naissance": birthday, "ID": identifier}
+
+        player_profil = {"Nom": name, "Prenom": surname, "Date de naissance": birthday,"Elo": elo, "ID": identifier}
         return player_profil
 
 
@@ -87,7 +95,7 @@ class AskingPlayer:
         return user_input
 
 
-# save = PlayerView
-# print(save.get_player_data())
+save = PlayerView
+# print(save.get_player_elo())
 # add = AskingPlayer
 # print(add.asking_for_new_player())

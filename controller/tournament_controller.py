@@ -59,8 +59,10 @@ class TournamentController:
         for localisation in tournament:
             if user_input in localisation.values():
                 return print(f"Voici la fiche du tournoi {user_input} - {localisation}")
-        return print("Ce trounoi n'est pas dans notre liste")
+        return print("Ce tournois n'est pas dans notre liste")
 
+
+"""    
     @staticmethod
     def creating_pairs():
 
@@ -76,11 +78,12 @@ class TournamentController:
             player_list_min += 1
             player_list_max -= 1
         return pairs
+"""
 
 
 view = TournamentView()
-controller = TournamentController()
-controller.response_general_information()
+# controller = TournamentController()
+# controller.response_general_information()
 # print(controller.find_player_card())
 # print(controller.find_tournament_card())
 # print(controller.creating_pairs())

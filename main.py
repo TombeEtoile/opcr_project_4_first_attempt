@@ -19,8 +19,5 @@ def main():
 
     # Ne pas lancer avant tous les test, tous les joueurs sont déjà instanciés
 
-    # tournament_controller = TournamentController()
-    # tournament_controller.creating_pairs()
-
 
 print(main())

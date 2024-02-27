@@ -15,7 +15,7 @@ class TournamentView:
     @staticmethod
     def player_data():
 
-        with open("../player_data.json", "r") as f:
+        with open("player_data.json", "r") as f:
             player_dict = f.read()
             player_data = json.loads(player_dict)
 
@@ -43,7 +43,7 @@ class TournamentView:
     @staticmethod
     def tournament_data():
 
-        with open("../tournament_data.json", "r") as f:
+        with open("tournament_data.json", "r") as f:
             tournament_dict = f.read()
             tournament_data = json.loads(tournament_dict)
 
@@ -54,6 +54,7 @@ class TournamentView:
         all_tournament_name = []
 
         tournaments = self.tournament_data()
+        print(tournaments)
         for row in tournaments:
             tournament_name = row["Nom"]
             all_tournament_name.append(tournament_name)
@@ -74,5 +75,6 @@ test_view = TournamentView()
 # print(test_view.player_data())
 # print(test_view.tournament_data())
 # test_view.get_player_info()
-# test_view.show_player_name()
 # test_view.get_tournament_info()
+# test_view.show_player_name()
+# test_view.show_tournament_name()
