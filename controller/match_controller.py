@@ -37,6 +37,10 @@ class MatchController:
             player_list_max -= 1
         return pairs
 
+    def print_elo_pair(self):
+        with open("../paires_round_1.json", "w") as f:
+            json.dump(self.elo_pair(), f, indent=2)
+
     def tri_point(self):
         """Tri par point competition"""
 
@@ -47,9 +51,11 @@ class MatchController:
     def point_distribution(self):
         """Distribution des point en fonction du résultat"""
 
-        victoire = 1
-        defaite = 0
-        egalite = 0.5
+        # victoire = 1
+        # defaite = 0
+        # egalite = 0.5
+
+        pass
 
     def creat_pair(self):
         """Paire par point elo"""
@@ -59,11 +65,9 @@ class MatchController:
         """Attribution des points aux joueurs"""
         pass
 
-    def random_result(self):
-        pass
-
 
 match_controller = MatchController()
 # print(match_controller.get_player_data())
-print(match_controller.tri_elo())
-print(match_controller.elo_pair())
+# print(match_controller.tri_elo())
+# print(match_controller.elo_pair())
+print(match_controller.print_elo_pair())
