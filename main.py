@@ -11,8 +11,8 @@ def test():
 
 def main():
 
-    # player_controller = PlayerController(view=True)
-    # player_controller.add_new_player()
+    player_controller = PlayerController(view=True)
+    player_controller.add_new_player()
 
     tournament_controller = TournamentController()
     tournament_controller.response_general_information()

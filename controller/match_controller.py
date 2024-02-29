@@ -1,4 +1,5 @@
 import json
+import random
 
 
 class MatchController:
@@ -51,10 +52,6 @@ class MatchController:
     def point_distribution(self):
         """Distribution des point en fonction du résultat"""
 
-        # victoire = 1
-        # defaite = 0
-        # egalite = 0.5
-
         pass
 
     def creat_pair(self):
@@ -69,5 +66,7 @@ class MatchController:
 match_controller = MatchController()
 # print(match_controller.get_player_data())
 # print(match_controller.tri_elo())
-# print(match_controller.elo_pair())
-print(match_controller.print_elo_pair())
+print(match_controller.elo_pair())
+# print(match_controller.print_elo_pair())
+# print(match_controller.point_distribution())
+
