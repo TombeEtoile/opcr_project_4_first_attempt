@@ -44,26 +44,19 @@ class MatchView:
         a = 0
         b = 1
         for x in range(len(MatchView.show_player_name())//2):
-            print(f"Match {x+1} : {MatchView.show_player_name()[a]} vs {MatchView.show_player_name()[b]}")
+            print(f"Match {x+1} - {MatchView.show_player_name()[a]} vs {MatchView.show_player_name()[b]}")
             a += 2
             b += 2
-            winner = input("Vainceur = ")
+            winner = input("Vainqueur = ")
             all_winner.append(winner)
             loser = input("Perdant = ")
             all_loser.append(loser)
-            equality_1 = input("'OK' si egalité : ")
+            equality_1 = input("Égalité (j1) : ")
             all_equality_1.append(equality_1)
-            equality_2 = input("'OK' si egalité : ")
+            equality_2 = input("Égalité (j2) : ")
             all_equality_2.append(equality_2)
 
-            # all_results.append(all_winner, all_loser, all_equality)
-
         return all_winner, all_loser, all_equality_1, all_equality_2
-
-    @staticmethod
-    def result_round_2():
-        """Résultats du round 2"""
-        pass
 
     @staticmethod
     def result_round_3():
