@@ -18,13 +18,14 @@ class TournamentController:
         answer = TournamentView.get_general_tournament_info()
 
         try:
+            """
             if answer == "1":
                 self.creating_pairs()
                 print(self.creating_pairs())
                 self.response_general_information()
                 return self.creating_pairs()
-
-            elif answer == "2":
+            """
+            if answer == "2":
                 self.find_player_card()
                 self.response_general_information()
 

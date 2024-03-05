@@ -72,7 +72,7 @@ class PlayerView:
     @staticmethod
     def get_player_point():
 
-        return True
+        return 0
 
     @staticmethod
     def get_player_data():

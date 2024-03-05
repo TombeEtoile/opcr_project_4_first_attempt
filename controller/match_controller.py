@@ -1,5 +1,6 @@
 import json
-import random
+
+from view.match_view import MatchView
 
 
 class MatchController:
@@ -16,7 +17,7 @@ class MatchController:
 
             return player_data
 
-    def tri_elo(self):
+    def tri_player_by_elo(self):
         """Tri par point elo"""
 
         data = self.get_player_data()
@@ -26,7 +27,7 @@ class MatchController:
     def elo_pair(self):
 
         pairs = []
-        player_list = self.tri_elo()
+        player_list = self.tri_player_by_elo()
         player_list_min = 0
         player_list_max = len(player_list) - 1
         possible_pairs = int(len(player_list) / 2)
@@ -38,21 +39,37 @@ class MatchController:
             player_list_max -= 1
         return pairs
 
-    def print_elo_pair(self):
+    def elo_pair_to_json(self):
         with open("../paires_round_1.json", "w") as f:
             json.dump(self.elo_pair(), f, indent=2)
 
-    def tri_point(self):
-        """Tri par point competition"""
+    @staticmethod
+    def list_for_point_distribution():
+        """Création de listes contenant les victoires, défaites et égalités"""
 
-        data = self.get_player_data()
+        vote = MatchView.result_round_1()
 
-        return sorted(data, key=lambda x: x['age'])
+        round_1_result = {"Victoire": vote[0], "Défaite": vote[1], "Égalité": vote[2] + vote[3]}
+
+        return round_1_result
 
     def point_distribution(self):
-        """Distribution des point en fonction du résultat"""
+        """Distribution des points"""
 
-        pass
+        result_match = self.list_for_point_distribution()
+
+        for player in self.get_player_data():
+            if player["Nom"] in result_match["Victoire"]:
+                # print(f"{player["Nom"]} = V")
+                player.update({"Point": +1})
+            elif player["Nom"] in result_match["Défaite"]:
+                # print(f"{player["Nom"]} = D")
+                player.update({"Point": +0})
+            elif player["Nom"] in result_match["Égalité"]:
+                # print(f"{player["Nom"]} = E")
+                player.update({"Point": +0.5})
+
+        return self.get_player_data()
 
     def creat_pair(self):
         """Paire par point elo"""
@@ -65,8 +82,8 @@ class MatchController:
 
 match_controller = MatchController()
 # print(match_controller.get_player_data())
-# print(match_controller.tri_elo())
-print(match_controller.elo_pair())
-# print(match_controller.print_elo_pair())
-# print(match_controller.point_distribution())
-
+# print(match_controller.tri_player_by_elo())
+# print(match_controller.elo_pair())
+# print(match_controller.elo_pair_to_json())
+# print(match_controller.list_for_point_distribution())
+print(match_controller.point_distribution())
