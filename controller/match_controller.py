@@ -18,16 +18,10 @@ class MatchController:
                 self.response_round_1()
 
             elif answer == "2":
-                self.point_distribution()
-                self.response_round_1()
+                self.tournament_update()
+                self.response_round_2()
 
-            elif answer == "3":
-                pass
-
-            elif answer == "4":
-                pass
-
-            elif answer != "1" or "2" or "3" or "4":
+            elif answer != "1" or "2":
                 print("ERREUR : Votre réponse n'est pas valable.")
                 MatchView.round_1_organisation()
 
@@ -35,7 +29,6 @@ class MatchController:
             print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {MatchView.round_1_organisation()}")
 
     def response_round_2(self):
-
         pass
 
     @staticmethod
@@ -131,7 +124,7 @@ class MatchController:
     def tournament_update(self):
         """Création d'un Json avec les mises à jours des points tournois"""
 
-        with open("../player_data.json", "w") as f:
+        with open("../round_1_result.json", "w") as f:
             json.dump(self.point_distribution(), f, indent=2)
 
 
