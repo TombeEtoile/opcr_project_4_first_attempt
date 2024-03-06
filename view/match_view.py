@@ -7,6 +7,25 @@ class MatchView:
         pass
 
     @staticmethod
+    def round_1_organisation():
+        """1 - voir l'organisation du round 1"""
+        """2 - inscrire les résultats du round 1"""
+        """3 - voir le classement suite au round 1"""
+        """4 - passer à la création des autres rounds"""
+
+        print("Tapez le chiffre associé à votre choix : ")
+        print("1 - voir l'organisation du round 1, "
+              "2 - inscrire les résultats du round 1, "
+              "3 - voir le classement des joueurs suite au 1er round"
+              "4 - passer aux round suivants")
+        user_input = input("Tapez 1, 2, 3 ou 4 : ")
+        return user_input
+
+    @staticmethod
+    def other_round_organisation():
+        pass
+
+    @staticmethod
     def get_pair_round_1_data():
 
         with open("../paires_round_1.json", "r") as f:
@@ -68,36 +87,7 @@ class MatchView:
         """Résultats du round 4"""
         pass
 
-    @staticmethod
-    def round_resume():
-        """Voir la fiche des rounds"""
-
-        print("1 - voir le résumé du round 1, "
-              "2 - voir le résumé du round 2, "
-              "3 - voir le résumé du round 3, "
-              "4 - voir le résumé du round 4")
-        user_input = input("Tapez 1, 2, 3 ou 4 : ")
-        return user_input
-
 
 test_view = MatchView()
 # print(test_view.show_player_name())
 # print(test_view.result_round_1())
-
-""" 
-@staticmethod
-def result_round_1():
-       
-        all_user_input = []
-
-        print("Qui sont les vainqueurs du premier round ?")
-        print("Sélectionnez le nom du vainqueur ou écrivé -Nul- en cas d'égalité")
-
-        for paire in MatchView.get_pair_round_1_data():
-            print(paire)
-            user_input = input("Résultat : ")
-
-            all_user_input.append(user_input)
-
-        return all_user_input
-"""

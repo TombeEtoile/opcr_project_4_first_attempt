@@ -18,7 +18,7 @@ def main():
     tournament_controller = TournamentController()
     tournament_controller.response_general_information()
 
-    match_controller = MatchController()
+    # match_controller = MatchController()
 
     # Ne pas lancer avant tous les test, tous les joueurs sont déjà instanciés
 

@@ -8,6 +8,36 @@ class MatchController:
     def __init__(self):
         pass
 
+    def response_round_1(self):
+
+        answer = MatchView.round_1_organisation()
+
+        try:
+            if answer == "1":
+                print(self.elo_pair())
+                self.response_round_1()
+
+            elif answer == "2":
+                self.point_distribution()
+                self.response_round_1()
+
+            elif answer == "3":
+                pass
+
+            elif answer == "4":
+                pass
+
+            elif answer != "1" or "2" or "3" or "4":
+                print("ERREUR : Votre réponse n'est pas valable.")
+                MatchView.round_1_organisation()
+
+        except TypeError or ValueError:
+            print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {MatchView.round_1_organisation()}")
+
+    def response_round_2(self):
+
+        pass
+
     @staticmethod
     def get_player_data():
 
@@ -93,13 +123,20 @@ class MatchController:
                 # print(f"{player["Nom"]} = D")
                 player["Point"] = +0
             elif player["Nom"] in result_match["Égalité"]:
-                print(f"{player["Nom"]} = E")
+                # print(f"{player["Nom"]} = E")
                 player["Point"] = +0.5
 
         return all_players
 
+    def tournament_update(self):
+        """Création d'un Json avec les mises à jours des points tournois"""
+
+        with open("../player_data.json", "w") as f:
+            json.dump(self.point_distribution(), f, indent=2)
+
 
 match_controller = MatchController()
+match_controller.response_round_1()
 # print(match_controller.get_player_data())
 
 # print(match_controller.tri_player_by_elo())
@@ -111,5 +148,4 @@ match_controller = MatchController()
 # print(match_controller.point_pair_to_json())
 
 # print(match_controller.list_for_point_distribution())
-# print(match_controller.point_distribution())
-
+# match_controller.point_distribution()
