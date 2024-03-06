@@ -6,9 +6,9 @@ class TournamentView:
     @staticmethod
     def get_general_tournament_info():
 
-        print("1 - voir les pairs de joueurs, "
-              "2 - voir la fiche d'un joueur, "
-              "3 - voir la fiche d'un tournoi, ")
+        print("1 - voir la fiche d'un joueur, "
+              "2 - voir la fiche d'un tournoi, "
+              "3 - passer aux résultats du tournoi")
         user_input = input("Tapez 1, 2 ou 3 : ")
         return user_input
 

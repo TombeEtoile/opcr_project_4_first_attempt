@@ -25,13 +25,16 @@ class TournamentController:
                 self.response_general_information()
                 return self.creating_pairs()
             """
-            if answer == "2":
+            if answer == "1":
                 self.find_player_card()
                 self.response_general_information()
 
-            elif answer == "3":
+            elif answer == "2":
                 self.find_tournament_card()
                 self.response_general_information()
+
+            elif answer == "3":
+                pass
 
             elif answer != "1" or "2" or "3":
                 print("ERREUR : Votre réponse n'est pas valable.")
