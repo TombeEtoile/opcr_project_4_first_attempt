@@ -16,7 +16,7 @@ class MatchView:
         print("Tapez le chiffre associé à votre choix : ")
         print("1 - voir l'organisation du round 1, "
               "2 - inscrire les résultats du round 1, "
-              "3 - voir le classement des joueurs suite au 1er round"
+              "3 - voir le classement des joueurs suite au 1er round",
               "4 - passer aux round suivants")
         user_input = input("Tapez 1, 2, 3 ou 4 : ")
         return user_input

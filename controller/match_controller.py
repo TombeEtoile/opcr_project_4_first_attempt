@@ -19,9 +19,18 @@ class MatchController:
 
             elif answer == "2":
                 self.tournament_update()
+                self.response_round_1()
+
+            elif answer == "3":
+                with open("../round_1_result.json") as f:
+                    data = json.load(f)
+                    print(data)
+                self.response_round_1()
+
+            elif answer == "4":
                 self.response_round_2()
 
-            elif answer != "1" or "2":
+            elif answer != "1" or "2" or "3" or "4":
                 print("ERREUR : Votre réponse n'est pas valable.")
                 MatchView.round_1_organisation()
 
@@ -29,7 +38,8 @@ class MatchController:
             print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {MatchView.round_1_organisation()}")
 
     def response_round_2(self):
-        pass
+
+        self.tri_player_by_point()
 
     @staticmethod
     def get_player_data():
@@ -108,28 +118,37 @@ class MatchController:
         result_match = self.list_for_point_distribution()
         all_players = self.get_player_data()
 
+        entree = "../player_data.json"
+        sortie = "../player_data.out.json"
+
         for player in all_players:
-            if player["Nom"] in result_match["Victoire"]:
-                # print(f"{player["Nom"]} = V")
-                player["Point"] = +1
-            elif player["Nom"] in result_match["Défaite"]:
-                # print(f"{player["Nom"]} = D")
-                player["Point"] = +0
-            elif player["Nom"] in result_match["Égalité"]:
-                # print(f"{player["Nom"]} = E")
-                player["Point"] = +0.5
+
+            with open(entree, "r", encoding="utf-8") as fp:
+                all_players = json.load(fp)
+
+                if player["Nom"] in result_match["Victoire"]:
+                    player["Point"] = +1
+
+                elif player["Nom"] in result_match["Défaite"]:
+                    player["Point"] = +0
+
+                elif player["Nom"] in result_match["Égalité"]:
+                    player["Point"] = +0.5
+
+            with open(sortie, "w", encoding="utf-8") as fp:
+                json.dump(player, fp, sort_keys=True, indent=4)
 
         return all_players
 
     def tournament_update(self):
         """Création d'un Json avec les mises à jours des points tournois"""
 
-        with open("../round_1_result.json", "w") as f:
-            json.dump(self.point_distribution(), f, indent=2)
+        # with open("../player_data.json", "w") as f:
+        # json.dump(self.point_distribution(), f, indent=2)
 
 
 match_controller = MatchController()
-match_controller.response_round_1()
+# match_controller.response_round_1()
 # print(match_controller.get_player_data())
 
 # print(match_controller.tri_player_by_elo())
@@ -141,4 +160,5 @@ match_controller.response_round_1()
 # print(match_controller.point_pair_to_json())
 
 # print(match_controller.list_for_point_distribution())
-# match_controller.point_distribution()
+match_controller.point_distribution()
+# match_controller.tournament_update()
