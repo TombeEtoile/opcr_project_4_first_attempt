@@ -32,10 +32,10 @@ class MatchController:
 
             elif answer != "1" or "2" or "3" or "4":
                 print("ERREUR : Votre réponse n'est pas valable.")
-                MatchView.round_1_organisation()
+                self.response_round_1()
 
         except TypeError or ValueError:
-            print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {MatchView.round_1_organisation()}")
+            print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {self.response_round_1()}")
 
     def response_round_2(self):
 
@@ -143,8 +143,8 @@ class MatchController:
     def tournament_update(self):
         """Création d'un Json avec les mises à jours des points tournois"""
 
-        # with open("../player_data.json", "w") as f:
-        # json.dump(self.point_distribution(), f, indent=2)
+        with open("../player_data.json", "w") as f:
+            json.dump(self.point_distribution(), f, indent=2)
 
 
 match_controller = MatchController()
