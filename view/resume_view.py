@@ -5,6 +5,7 @@ class ResumeView:
 
     @staticmethod
     def general_information():
+        """Menu choice"""
 
         print("Séléctionner les données que vous souhaitez analyser : ")
         input("1 - voir les résultats d'un joueur \n"

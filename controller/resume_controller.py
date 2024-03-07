@@ -15,21 +15,27 @@ class ResumeController:
 
         try:
             if user_input == "1":
+                """Call fonction to see a player's result"""
                 self.player_result()
 
             elif user_input == "2":
+                """Call fonction to see round 1 results"""
                 self.first_round_result()
 
             elif user_input == "3":
+                """Call fonction to see round 2 results"""
                 self.second_round_result()
 
             elif user_input == "4":
+                """Call fonction to see round 3 results"""
                 self.third_round_result()
 
             elif user_input == "5":
+                """Call fonction to see round 4 results"""
                 self.fourth_round_result()
 
             elif user_input == "6":
+                """Call fonction to see the overall tournament result"""
                 self.ranking_result()
 
             elif user_input != "1" or "2" or "3" or "4" or "5" or "6":
@@ -41,6 +47,7 @@ class ResumeController:
 
     @staticmethod
     def get_player_data():
+        """Import player Json data"""
 
         with open("../player_data.json", "r") as f:
             player_dict = f.read()
@@ -49,7 +56,7 @@ class ResumeController:
             return player_data
 
     def player_result(self):
-        """voir résultats d'un joueur"""
+        """see a player's results"""
 
         all_players_name = []
 
@@ -74,23 +81,23 @@ class ResumeController:
         return print("Ce joueur n'est pas dans notre liste")
 
     def first_round_result(self):
-        """voir résultats global du 1er round"""
+        """see round 1 overall results"""
         pass
 
     def second_round_result(self):
-        """voir résultats global du 2ème round"""
+        """see round 2 overall results"""
         pass
 
     def third_round_result(self):
-        """voir résultats global du 3ème round"""
+        """see round 3 overall results"""
         pass
 
     def fourth_round_result(self):
-        """voir résultats global du 4ème rounds"""
+        """see round 4 overall results"""
         pass
 
     def ranking_result(self):
-        """voir classement de tous les joueurs"""
+        """see ranking of all players"""
 
         result = self.get_player_data()
 
