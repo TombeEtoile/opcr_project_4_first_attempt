@@ -5,6 +5,7 @@ class TournamentView:
 
     @staticmethod
     def get_general_tournament_info():
+        """Menu choice"""
 
         print("1 - voir la fiche d'un joueur, "
               "2 - voir la fiche d'un tournoi, "
@@ -14,6 +15,7 @@ class TournamentView:
 
     @staticmethod
     def player_data():
+        """Import the players' Json"""
 
         with open("player_data.json", "r") as f:
             player_dict = f.read()
@@ -22,6 +24,7 @@ class TournamentView:
             return player_data
 
     def show_player_name(self):
+        """Displays player names via Json"""
 
         all_players_name = []
 
@@ -33,6 +36,7 @@ class TournamentView:
         return all_players_name
 
     def get_player_info(self):
+        """Input for the name of the player the user wants to analyze"""
 
         print("Voici le nom des joueurs :"
               f"{self.show_player_name()}")
@@ -42,6 +46,7 @@ class TournamentView:
 
     @staticmethod
     def tournament_data():
+        """Import the Tournament Json"""
 
         with open("tournament_data.json", "r") as f:
             tournament_dict = f.read()
@@ -50,6 +55,7 @@ class TournamentView:
             return tournament_data
 
     def show_tournament_name(self):
+        """Displays tournament names via Json"""
 
         all_tournament_name = []
 
@@ -62,6 +68,7 @@ class TournamentView:
         return all_tournament_name
 
     def get_tournament_info(self):
+        """Input for the name of the tournament the user wants to analyze"""
 
         print("Voici le nom des tournois :"
               f"{self.show_tournament_name()}")

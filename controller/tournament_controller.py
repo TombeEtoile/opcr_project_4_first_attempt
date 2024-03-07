@@ -9,22 +9,16 @@ class TournamentController:
 
     def response_general_information(self):
         """
-        Si 1 ==> appelle creating_pairs() pour créer des paires de tournois
-        Si 2 ==> appelle find_player_card() pour afficher la fiche d'un joueur
-        Si 3 ==> appelle find_tournament_card() pour afficher la fiche d'un tournois
+        Si 1 ==> calls find_player_card() to display a player's card
+        Si 2 ==> calls find_tournament_card() to display a tournament card
+        Si 3 ==> pass
         """
 
         # TournamentView.get_general_tournament_info()
         answer = TournamentView.get_general_tournament_info()
 
         try:
-            """
-            if answer == "1":
-                self.creating_pairs()
-                print(self.creating_pairs())
-                self.response_general_information()
-                return self.creating_pairs()
-            """
+
             if answer == "1":
                 self.find_player_card()
                 self.response_general_information()
@@ -45,6 +39,7 @@ class TournamentController:
 
     @staticmethod
     def find_player_card():
+        """Find a player's card according to {"Nom": user_input}"""
 
         players = TournamentView.player_data()
         user_input = TournamentView.get_player_info(view)
@@ -56,6 +51,7 @@ class TournamentController:
 
     @staticmethod
     def find_tournament_card():
+        """Find a tournament's card according to {"Nom": user_input}"""
 
         tournament = TournamentView.tournament_data()
         user_input = TournamentView.get_tournament_info(view)
