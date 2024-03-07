@@ -1,7 +1,7 @@
 class PlayerModel:
 
     def __init__(self, p_name, p_surname, p_birthday, p_identifier, p_elo, p_point):
-        """define a player with a name, surname, birthday and id"""
+        """define a player"""
 
         self.name = p_name
         self.surname = p_surname

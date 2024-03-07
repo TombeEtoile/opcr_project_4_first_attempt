@@ -71,6 +71,7 @@ class PlayerView:
 
     @staticmethod
     def get_player_point():
+        """Setting 0 point for all the players"""
 
         return 0
 

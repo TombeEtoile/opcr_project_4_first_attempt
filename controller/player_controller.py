@@ -7,7 +7,7 @@ from view.player_view import PlayerView, AskingPlayer
 
 
 class PlayerController:
-    """Récupère les informations données par les joueurs et les vérifies avec le player model"""
+    """Retrieves information from players and checks it with the player model"""
 
     def __init__(self, view):
 
@@ -23,14 +23,14 @@ class PlayerController:
 
         try:
             if response == 1:
-                """Si 1 ==> appelle la vue pour créer un joueur et appelle call_for_asking_new_player()"""
+                """Si 1 ==> calls the view to create a player and calls call_for_asking_new_player()"""
                 self.players.append(PlayerView.get_player_data())
                 print(self.players)
                 self.call_for_asking_new_player()
                 return self.players
 
             elif response == 2:
-                """Si 2 ==> enregistre les joueurs"""
+                """Si 2 ==> registers players"""
                 print("Les joueurs ont été enregistrés")
                 self.run_save_and_add()
                 # TournamentController.response_general_information(self=TournamentController)
@@ -40,6 +40,7 @@ class PlayerController:
             return self.add_new_player()
 
     def call_for_asking_new_player(self):
+        """calls up the previous function to add another player"""
 
         self.add_new_player()
 
