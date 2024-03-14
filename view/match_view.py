@@ -14,10 +14,11 @@ class MatchView:
         """4 - passer à la création des autres rounds"""
 
         print("Tapez le chiffre associé à votre choix : ")
-        print("1 - voir l'organisation du round 1, "
-              "2 - inscrire les résultats du round 1, "
-              "3 - voir le classement des joueurs suite au 1er round",
-              "4 - passer aux round suivants")
+        print("1 - Voir l'organisation du round 1,\n "
+              "2 - Inscrire les résultats du round 1,\n "
+              "3 - Voir le classement des joueurs suite au round,\n",
+              "4 - Passer aux round suivants\n"
+              "5 - Analyser les résultats du tournoi")
         user_input = input("Tapez 1, 2, 3 ou 4 : ")
         return user_input
 
@@ -76,16 +77,6 @@ class MatchView:
             all_equality_2.append(equality_2)
 
         return all_winner, all_loser, all_equality_1, all_equality_2
-
-    @staticmethod
-    def result_round_3():
-        """Résultats du round 3"""
-        pass
-
-    @staticmethod
-    def result_round_4():
-        """Résultats du round 4"""
-        pass
 
 
 test_view = MatchView()

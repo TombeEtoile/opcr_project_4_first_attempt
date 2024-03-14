@@ -17,28 +17,19 @@ class ResumeController:
             if user_input == "1":
                 """Call fonction to see a player's result"""
                 self.player_result()
+                self.general_responses()
 
             elif user_input == "2":
                 """Call fonction to see round 1 results"""
-                self.first_round_result()
+                print(self.all_rounds_result())
+                self.general_responses()
 
             elif user_input == "3":
-                """Call fonction to see round 2 results"""
-                self.second_round_result()
+                """Pass to end the tournament"""
+                print("Le tournois est terminé !")
+                pass
 
-            elif user_input == "4":
-                """Call fonction to see round 3 results"""
-                self.third_round_result()
-
-            elif user_input == "5":
-                """Call fonction to see round 4 results"""
-                self.fourth_round_result()
-
-            elif user_input == "6":
-                """Call fonction to see the overall tournament result"""
-                self.ranking_result()
-
-            elif user_input != "1" or "2" or "3" or "4" or "5" or "6":
+            elif user_input != "1" or "2" or "3":
                 print("ERREUR : Votre réponse n'est pas valable.")
                 self.general_responses()
 
@@ -80,21 +71,15 @@ class ResumeController:
                 return print(f"Voici la fiche du joueur {user_input} - {player}")
         return print("Ce joueur n'est pas dans notre liste")
 
-    def first_round_result(self):
+    @staticmethod
+    def all_rounds_result():
         """see round 1 overall results"""
-        pass
 
-    def second_round_result(self):
-        """see round 2 overall results"""
-        pass
+        with open("../player_data.json", "r") as f:
+            player_dict = f.read()
+            player_data = json.loads(player_dict)
 
-    def third_round_result(self):
-        """see round 3 overall results"""
-        pass
-
-    def fourth_round_result(self):
-        """see round 4 overall results"""
-        pass
+            return player_data
 
     def ranking_result(self):
         """see ranking of all players"""
@@ -105,5 +90,6 @@ class ResumeController:
 
 
 resume_controller = ResumeController()
+resume_controller.general_responses()
 # resume_controller.player_result()
-resume_controller.ranking_result()
+# resume_controller.ranking_result()

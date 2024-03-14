@@ -1,6 +1,7 @@
 from controller.player_controller import PlayerController
 from controller.tournament_controller import TournamentController
 from controller.match_controller import MatchController
+from controller.resume_controller import ResumeController
 
 
 def test():
@@ -18,9 +19,11 @@ def main():
     tournament_controller = TournamentController()
     tournament_controller.response_general_information()
 
-    # match_controller = MatchController()
+    match_controller = MatchController()
+    match_controller.response_round_1()
 
-    # Ne pas lancer avant tous les test, tous les joueurs sont déjà instanciés
+    resume_controller = ResumeController()
+    resume_controller.general_responses()
 
 
 print(main())
