@@ -1,8 +1,6 @@
 import random
 import string
 
-# from controller import player_controller
-
 
 class PlayerView:
     """Les joueurs entrent leur données"""
@@ -12,10 +10,12 @@ class PlayerView:
         """Player name"""
 
         user_input = input("Entrez votre nom : ")
+
         try:
             user_input = int(user_input)
             print("ERREUR - Vous devez écrire uniquement des lettres.")
             return PlayerView.get_player_name()
+
         except ValueError:
             return user_input
 
@@ -24,10 +24,12 @@ class PlayerView:
         """Player surname"""
 
         user_input = input("Entrez votre prénom : ")
+
         try:
             user_input = int(user_input)
             print("ERREUR - Vous devez écrire uniquement des lettres.")
             return PlayerView.get_player_surname()
+
         except ValueError:
             return user_input
 
@@ -40,11 +42,13 @@ class PlayerView:
             user_input_day = input("jj : ")
             user_input_month = input("mm : ")
             user_input_year = input("aaaa : ")
+
             try:
                 user_input_day = int(user_input_day)
                 user_input_month = int(user_input_month)
                 user_input_year = int(user_input_year)
                 break
+
             except ValueError:
                 print("Votre date de naissance doit contenir uniquement des chiffres.")
 
@@ -54,7 +58,9 @@ class PlayerView:
     @staticmethod
     def get_player_elo():
         """player elo"""
+
         player_elo = random.randint(1800, 2200)
+
         return player_elo
 
     @staticmethod
@@ -66,6 +72,7 @@ class PlayerView:
                      f"{random.choice(string.ascii_letters)}"
                      f"{random.choice(string.ascii_letters)}"
                      f"{random.randint(1000, 9999)}")
+
         print("Voici votre ID : ", player_id)
         return player_id
 
@@ -92,6 +99,7 @@ class PlayerView:
                          "Elo": elo,
                          "ID": identifier,
                          "Point": point}
+
         return player_profil
 
 

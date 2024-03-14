@@ -117,7 +117,8 @@ class MatchController:
 
     @staticmethod
     def get_player_data_test():
-        # Cette méthode devrait retourner les données des joueurs à partir du fichier JSON
+        """Cette méthode devrait retourner les données des joueurs à partir du fichier JSON"""
+
         with open("../player_data.json", "r", encoding="utf-8") as fp:
             return json.load(fp)
 
@@ -158,4 +159,4 @@ match_controller = MatchController()
 # print(match_controller.point_pair_to_json())
 
 # print(match_controller.list_for_point_distribution())
-match_controller.point_distribution()
+# match_controller.point_distribution()

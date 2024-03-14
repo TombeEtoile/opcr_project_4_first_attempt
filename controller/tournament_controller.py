@@ -1,5 +1,4 @@
 from view.tournament_view import TournamentView
-# from player_controller import PlayerController
 
 
 class TournamentController:
@@ -14,7 +13,6 @@ class TournamentController:
         Si 3 ==> pass
         """
 
-        # TournamentView.get_general_tournament_info()
         answer = TournamentView.get_general_tournament_info()
 
         try:
@@ -60,25 +58,6 @@ class TournamentController:
             if user_input in localisation.values():
                 return print(f"Voici la fiche du tournoi {user_input} - {localisation}")
         return print("Ce tournois n'est pas dans notre liste")
-
-
-"""    
-    @staticmethod
-    def creating_pairs():
-
-        pairs = []
-        player_list = TournamentView.player_data()
-        player_list_min = 0
-        player_list_max = len(player_list) - 1
-        possible_pairs = int(len(player_list) / 2)
-
-        for x in range(possible_pairs):
-            pairs.append((player_list[player_list_min], player_list[player_list_max]))
-            possible_pairs -= 1
-            player_list_min += 1
-            player_list_max -= 1
-        return pairs
-"""
 
 
 view = TournamentView()

@@ -11,6 +11,7 @@ class TournamentView:
               "2 - voir la fiche d'un tournoi, "
               "3 - passer aux résultats du tournoi")
         user_input = input("Tapez 1, 2 ou 3 : ")
+
         return user_input
 
     @staticmethod

@@ -3,7 +3,6 @@ import json
 
 from model.player_model import PlayerModel
 from view.player_view import PlayerView, AskingPlayer
-# from tournament_controller import TournamentController
 
 
 class PlayerController:

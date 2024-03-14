@@ -8,10 +8,10 @@ class MatchView:
 
     @staticmethod
     def round_1_organisation():
-        """1 - voir l'organisation du round 1"""
-        """2 - inscrire les résultats du round 1"""
-        """3 - voir le classement suite au round 1"""
-        """4 - passer à la création des autres rounds"""
+        """1 - voir l'organisation du round 1
+           2 - inscrire les résultats du round 1
+           3 - voir le classement suite au round 1
+           4 - passer à la création des autres rounds"""
 
         print("Tapez le chiffre associé à votre choix : ")
         print("1 - Voir l'organisation du round 1,\n "
@@ -20,11 +20,8 @@ class MatchView:
               "4 - Passer aux round suivants\n"
               "5 - Analyser les résultats du tournoi")
         user_input = input("Tapez 1, 2, 3 ou 4 : ")
-        return user_input
 
-    @staticmethod
-    def other_round_organisation():
-        pass
+        return user_input
 
     @staticmethod
     def get_pair_round_1_data():
@@ -40,7 +37,6 @@ class MatchView:
 
         all_players_name = []
         maxi = len(MatchView.get_pair_round_1_data())
-        # x = 0
 
         players = MatchView.get_pair_round_1_data()
         for x in range(maxi):

@@ -4,7 +4,7 @@ from view.resume_view import ResumeView
 
 
 class ResumeController:
-    """accès à la data"""
+    """Data access"""
 
     def __init__(self):
         pass
@@ -90,6 +90,6 @@ class ResumeController:
 
 
 resume_controller = ResumeController()
-resume_controller.general_responses()
+# resume_controller.general_responses()
 # resume_controller.player_result()
 # resume_controller.ranking_result()
