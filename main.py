@@ -4,13 +4,6 @@ from controller.match_controller import MatchController
 from controller.resume_controller import ResumeController
 
 
-def test():
-    x = input("lsdjs : ")
-    if x != str(1):
-        return test()
-    return x
-
-
 def main():
 
     player_controller = PlayerController(view=True)
