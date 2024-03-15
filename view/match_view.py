@@ -72,8 +72,11 @@ class MatchView:
         print("Voici la liste des match : ")
         a = 0
         b = 1
-        for x in range(len(MatchView.show_player_name())//2):
-            print(f"Match {x+1} - {MatchView.show_player_name()[a]} vs {MatchView.show_player_name()[b]}")
+        for x in range(len(MatchView.show_player_name()) // 2):
+            print(f"Match {x+1} - "
+                  f"{MatchView.show_player_name()[a]} "
+                  f"vs "
+                  f"{MatchView.show_player_name()[b]}")
             a += 2
             b += 2
             winner = input("Vainqueur = ")
