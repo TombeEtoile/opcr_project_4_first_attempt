@@ -16,9 +16,22 @@ class MatchView:
         print("Tapez le chiffre associé à votre choix : ")
         print("1 - Voir l'organisation du round 1,\n "
               "2 - Inscrire les résultats du round 1,\n "
-              "3 - Voir le classement des joueurs suite au round,\n",
-              "4 - Passer aux round suivants\n"
-              "5 - Analyser les résultats du tournoi")
+              "3 - Voir le classement des joueurs suite au round 1,\n",
+              "4 - Passer à l'inscription des rounds suivants")
+
+        user_input = input("Tapez 1, 2, 3 ou 4 : ")
+
+        return user_input
+
+    @staticmethod
+    def other_rounds_organisation():
+
+        print("Tapez le chiffre associé à votre choix : \n"
+              "1 - Inscrire les résultats du round suivant\n"
+              "2 - Voir le classement des joueurs suite au dernier round\n"
+              "3 - Voir les nouvelles pairs pour le prochain round\n"
+              "4 - Passer à l'analyse des résultats")
+
         user_input = input("Tapez 1, 2, 3 ou 4 : ")
 
         return user_input
@@ -26,7 +39,7 @@ class MatchView:
     @staticmethod
     def get_pair_round_1_data():
 
-        with open("../paires_round_1.json", "r") as f:
+        with open("paires_round_1.json", "r") as f:
             player_dict = f.read()
             player_data = json.loads(player_dict)
 

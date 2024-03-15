@@ -12,6 +12,8 @@ class MatchController:
 
         answer = MatchView.round_1_organisation()
 
+        self.elo_pair_to_json()
+
         try:
             if answer == "1":
                 print(self.elo_pair())
@@ -22,32 +24,57 @@ class MatchController:
                 self.response_round_1()
 
             elif answer == "3":
-                with open("../player_data.json.json") as f:
+                with open("player_data.json") as f:
                     data = json.load(f)
                     print(data)
                 self.response_round_1()
 
             elif answer == "4":
-                self.response_round_2()
+                self.tri_player_by_point()
+                self.response_other_rounds()
 
-            elif answer == "5":
-                pass
-
-            elif answer != "1" or "2" or "3" or "4" or "5":
+            elif answer != "1" or "2" or "3" or "4":
                 print("ERREUR : Votre réponse n'est pas valable.")
                 self.response_round_1()
 
         except TypeError or ValueError:
             print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {self.response_round_1()}")
 
-    def response_round_2(self):
+    def response_other_rounds(self):
 
-        self.tri_player_by_point()
+        answer = MatchView.other_rounds_organisation()
+
+        self.point_pair_to_json()
+
+        try:
+            if answer == "1":
+                self.point_distribution()
+                self.response_other_rounds()
+
+            elif answer == "2":
+                with open("player_data.json") as f:
+                    data = json.load(f)
+                    print(data)
+                self.response_other_rounds()
+
+            elif answer == "3":
+                print(self.point_pair())
+                self.response_other_rounds()
+
+            elif answer == "4":
+                pass
+
+            elif answer != "1" or "2" or "3" or "4":
+                print("ERREUR : Votre réponse n'est pas valable.")
+                self.response_other_rounds()
+
+        except TypeError or ValueError:
+            print(f"Votre réponse n'est pas valable, tapez 1, 2, 3, 4 ou 5 {self.response_other_rounds()}")
 
     @staticmethod
     def get_player_data():
 
-        with open("../player_data.json", "r") as f:
+        with open("player_data.json", "r") as f:
             player_dict = f.read()
             player_data = json.loads(player_dict)
 
@@ -76,7 +103,7 @@ class MatchController:
         return pairs
 
     def elo_pair_to_json(self):
-        with open("../paires_round_1.json", "w") as f:
+        with open("paires_round_1.json", "w") as f:
             json.dump(self.elo_pair(), f, indent=2)
 
     def tri_player_by_point(self):
@@ -102,7 +129,7 @@ class MatchController:
         return pairs
 
     def point_pair_to_json(self):
-        with open("../paires_other_round.json", "w") as f:
+        with open("paires_other_round.json", "w") as f:
             json.dump(self.elo_pair(), f, indent=2)
 
     @staticmethod
@@ -119,7 +146,7 @@ class MatchController:
     def get_player_data_test():
         """Cette méthode devrait retourner les données des joueurs à partir du fichier JSON"""
 
-        with open("../player_data.json", "r", encoding="utf-8") as fp:
+        with open("player_data.json", "r", encoding="utf-8") as fp:
             return json.load(fp)
 
     def point_distribution(self):
@@ -139,7 +166,7 @@ class MatchController:
                 player["Point"] += 0.5
 
         # Écrire les données mises à jour dans un fichier JSON de sortie
-        with open("../player_data.json", "w", encoding="utf-8") as fp:
+        with open("player_data.json", "w", encoding="utf-8") as fp:
             json.dump(all_players, fp, sort_keys=True, indent=4)
 
         print(all_players)

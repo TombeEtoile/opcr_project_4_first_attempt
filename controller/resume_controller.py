@@ -40,7 +40,7 @@ class ResumeController:
     def get_player_data():
         """Import player Json data"""
 
-        with open("../player_data.json", "r") as f:
+        with open("player_data.json", "r") as f:
             player_dict = f.read()
             player_data = json.loads(player_dict)
 
@@ -75,7 +75,7 @@ class ResumeController:
     def all_rounds_result():
         """see round 1 overall results"""
 
-        with open("../player_data.json", "r") as f:
+        with open("player_data.json", "r") as f:
             player_dict = f.read()
             player_data = json.loads(player_dict)
 
