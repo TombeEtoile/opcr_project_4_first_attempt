@@ -21,18 +21,21 @@ class PlayerController:
         response = AskingPlayer.asking_for_new_player()
 
         try:
-            if response == 1:
+            if response == "1":
                 """Si 1 ==> calls the view to create a player and calls call_for_asking_new_player()"""
                 self.players.append(PlayerView.get_player_data())
                 print(self.players)
                 self.call_for_asking_new_player()
                 return self.players
 
-            elif response == 2:
+            elif response == "2":
                 """Si 2 ==> registers players"""
                 print("Les joueurs ont été enregistrés")
                 self.run_save_and_add()
-                # TournamentController.response_general_information(self=TournamentController)
+
+            elif response != "1" or "2":
+                print("ERREUR : veuillez entrer 1 ou 2")
+                self.add_new_player()
 
         except ValueError:
             print("Veuillez écrire 1 ou 2")
