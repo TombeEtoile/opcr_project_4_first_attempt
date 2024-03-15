@@ -58,7 +58,9 @@ class MatchController:
                 self.response_other_rounds()
 
             elif answer == "3":
-                print(self.point_pair())
+                with open("paires_other_round.json") as f:
+                    data = json.load(f)
+                    print(data)
                 self.response_other_rounds()
 
             elif answer == "4":

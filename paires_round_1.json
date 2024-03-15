@@ -5,7 +5,7 @@
       "Elo": 1835,
       "ID": "3179mfR7507",
       "Nom": "A",
-      "Point": 1,
+      "Point": 2,
       "Prenom": "a"
     },
     {
@@ -23,7 +23,7 @@
       "Elo": 1839,
       "ID": "2648COS2765",
       "Nom": "G",
-      "Point": 0,
+      "Point": 1,
       "Prenom": "g"
     },
     {
@@ -41,7 +41,7 @@
       "Elo": 1884,
       "ID": "7235Xhr3474",
       "Nom": "F",
-      "Point": 0.5,
+      "Point": 1.0,
       "Prenom": "f"
     },
     {
@@ -49,7 +49,7 @@
       "Elo": 1964,
       "ID": "3875nsi4778",
       "Nom": "E",
-      "Point": 0.5,
+      "Point": 1.0,
       "Prenom": "e"
     }
   ],
@@ -67,7 +67,7 @@
       "Elo": 1951,
       "ID": "9266tww6221",
       "Nom": "C",
-      "Point": 0,
+      "Point": 1,
       "Prenom": "c"
     }
   ]
