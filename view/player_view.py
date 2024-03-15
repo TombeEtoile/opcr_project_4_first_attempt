@@ -109,9 +109,9 @@ class AskingPlayer:
     def asking_for_new_player():
         """Ask for adding a player"""
 
-        user_input = int(input(f"1 - pour ajouter un nouveau joueur \n"
-                               f"2 - pour cloturer l'inscription de nouveau joueur \n"
-                               f"Taper 1 ou 2 - "))
+        user_input = int(input("1 - pour ajouter un nouveau joueur \n"
+                               "2 - pour cloturer l'inscription de nouveau joueur \n"
+                               "Taper 1 ou 2 - "))
         return user_input
 
 

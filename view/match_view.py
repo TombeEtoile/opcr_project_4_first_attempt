@@ -73,7 +73,7 @@ class MatchView:
         a = 0
         b = 1
         for x in range(len(MatchView.show_player_name()) // 2):
-            print(f"Match {x+1} - "
+            print(f"Match {x + 1} - "
                   f"{MatchView.show_player_name()[a]} "
                   f"vs "
                   f"{MatchView.show_player_name()[b]}")
