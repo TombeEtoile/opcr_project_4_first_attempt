@@ -14,18 +14,14 @@ git clone https://github.com/TombeEtoile/projet_4.git
 
 #### Accéder au répertoire du projet :
 ```
-cd projet_3
-```
-
-#### Installer les dépendances :
-```
-pip install -r requirements.txt
+cd projet_4
 ```
 
 #### Lancer l'application :
 ```
-python main.py
+python3 main.py
 ```
+
 
 ## librairies extérieurs : 
 - from typing import List
