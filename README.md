@@ -7,24 +7,25 @@ Cette application python permet d’instancier un tournoi d'échecs ainsi que de
 
 
 ## Installation :
-####Cloner le dépôt :
+#### Cloner le dépôt :
+```
 git clone https://github.com/TombeEtoile/projet_4.git
+```
 
 #### Accéder au répertoire du projet :
+```
 cd projet_3
+```
 
 #### Installer les dépendances :
+```
 pip install -r requirements.txt
+```
 
-#### Configurer le projet :
-
-Vous devrez peut-être configurer certains paramètres ou clés d'API. Consultez la documentation du projet pour plus d'informations sur la configuration.
-Lancer l'application :
-
-bash
-Copy code
+#### Lancer l'application :
+```
 python main.py
-
+```
 
 ## librairies extérieurs : 
 - from typing import List
