@@ -46,5 +46,5 @@ class PlayerController:
     def run_save_and_add(self):
         """add player in Json"""
 
-        with open("player_data.json", "w") as f:
+        with open("player_data.json", "w+") as f:
             json.dump(self.players, f, indent=2)
